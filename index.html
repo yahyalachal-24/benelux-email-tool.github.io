@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Arrow Benelux Email Tool</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 30px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Menu buttons */
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.menu-btn {
+  padding: 12px 25px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background: #0078D4;
+  transition: background 0.3s;
+}
+
+.menu-btn:hover {
+  background: #005ea2;
+}
+
+/* Sections */
+.section {
+  display: none;
+  background: white;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  padding: 15px 20px;
+}
+
+.section h2 {
+  margin-top: 0;
+  color: #0078D4;
+}
+
+/* Action buttons */
+.button {
+  display: block;
+  background: #0078D4;
+  color: white;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #005ea2;
+}
+
+/* Responsive */
+@media (max-width: 600px){
+  .menu-btn { width: 100%; }
+}
+</style>
+
+<script>
+function sendMail(to, subject, body){
+    const link = "mailto:" + to + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    window.location.href = link;
+}
+
+/* Show only one section */
+function showSection(id){
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(s => s.style.display = 'none');
+    const section = document.getElementById(id);
+    if(section) section.style.display = 'block';
+}
+
+/* Show all sections */
+function showAll(){
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(s => s.style.display = 'block');
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+<h1>Arrow Benelux Email Tool</h1>
+
+<!-- Menu -->
+<div id="menu">
+  <button class="menu-btn" onclick="showSection('sendpo')">Send PO</button>
+  <button class="menu-btn" onclick="showSection('chasedelivery')">Chase Delivery</button>
+  <button class="menu-btn" onclick="showSection('others')">Others</button>
+  <button class="menu-btn" onclick="showAll()">All</button>
+</div>
+
+<!-- Sections -->
+
+<!-- Send PO Section -->
+<div class="section" id="sendpo">
+<h2>Send PO - Vendors</h2>
+
+<!-- Bitdefender Belux / NL côte à côte, curseur main, emails CC et corps du mail -->
+<div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;">
+
+  <!-- Bitdefender Belux -->
+  <a style="flex:1; display:inline-block; width:100%; background-color:#1E90FF; color:white; text-align:center; padding:10px 0; text-decoration:none; border-radius:5px; font-weight:bold; cursor:pointer;"
+     onclick="window.location.href='mailto:Piotr.Kaniewski@arrow.com?cc=belux.licence.ecs.be@arrow.com ; Maha.ABBAZI@arrow.com&subject=PO&body=Hello Piotr,%0D%0A%0D%0ACould you please place this order and let me know when it can be invoiced.%0D%0AThank you.%0D%0A%0D%0AKind regards,'">
+    Bitdefender Belux
+  </a>
+
+  <!-- Bitdefender NL -->
+  <a style="flex:1; display:inline-block; width:100%; background-color:#1E90FF; color:white; text-align:center; padding:10px 0; text-decoration:none; border-radius:5px; font-weight:bold; cursor:pointer;"
+     onclick="window.location.href='mailto:Piotr.Kaniewski@arrow.com?cc=license.ecs.nl@arrow.com ; Maha.ABBAZI@arrow.com&subject=PO&body=Hello Piotr,%0D%0A%0D%0ACould you please place this order and let me know when it can be invoiced.%0D%0AThank you.%0D%0A%0D%0AKind regards,'">
+    Bitdefender NL
+  </a>
+
+</div>
+
+<!-- Cloudian Belux / Cloudian NL côte à côte, bleu exact du premier code, compact et curseur main -->
+<div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;">
+
+  <a style="flex:1; display:inline-block; width:100%; background-color:#0078D7; color:white; text-align:center; padding:10px 0; text-decoration:none; border-radius:5px; font-weight:bold; cursor:pointer;"
+     onclick="window.location.href='mailto:orders@cloudian.com ; hevensen@cloudian.com ; daxler@cloudian.com?cc=belux.licence.ecs.be@arrow.com ; Maha.ABBAZI@arrow.com&subject=PO&body=Hello Team,%0D%0A%0D%0AAttached you will find our purchase order with reference number%0D%0A%0D%0ASend estimated delivery dates and confirmation of delivery to belux.licence.ecs.be@arrow.com%0D%0A%0D%0AKind regards,'">
+    Cloudian Belux
+  </a>
+
+  <a style="flex:1; display:inline-block; width:100%; background-color:#0078D7; color:white; text-align:center; padding:10px 0; text-decoration:none; border-radius:5px; font-weight:bold; cursor:pointer;"
+     onclick="window.location.href='mailto:orders@cloudian.com ; hevensen@cloudian.com ; daxler@cloudian.com?cc=license.ecs.nl@arrow.com ; Maha.ABBAZI@arrow.com&subject=PO&body=Hello Team,%0D%0A%0D%0AAttached you will find our purchase order with reference number%0D%0A%0D%0ASend estimated delivery dates and confirmation of delivery to license.ecs.nl@arrow.com%0D%0A%0D%0AKind regards,'">
+    Cloudian NL
+  </a>
+
+</div>
+
+<!-- Druva -->
+<a class="button" style="cursor:pointer;" 
+   onclick="window.location.href='mailto:thomas.dinsen@druva.com ; mathieu.oberic@druva.com ; gawaine.chisholm@druva.com?cc=license.ecs.nl@arrow.com ; Maha.ABBAZI@arrow.com&subject=PO&body=Hello Team,%0D%0A%0D%0AAttached you will find our purchase order with reference number%0D%0A%0D%0ASend estimated delivery dates and confirmation of delivery to license.ecs.nl@arrow.com%0D%0A%0D%0AKind regards,'">
+  Druva
+</a>
+
+<!-- EnterDB Belux / NL côte à côte, curseur main, espace uniforme -->
+<div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;">
+
+  <!-- EnterDB Belux -->
+  <a style="flex:1; display:inline-block; width:100%; background-color:#1E90FF; color:white; text-align:center; padding:10px 0; text-decoration:none; border-radius:5px; font-weight:bold; cursor:pointer;"
+     onclick="window.location.href='mailto:chris.thorpe@enterprisedb.com ; gary.edwards@enterprisedb.com ; aret.aprahamian@enterprisedb.com?cc=belux.licence.ecs.be@arrow.com ; Maha.ABBAZI@arrow.com&subject=PO&body=Hello Team,%0D%0A%0D%0APlease process the attached order.%0D%0A%0D%0APlease send confirmation of delivery to belux.licence.ecs.be@arrow.com%0D%0A%0D%0AThanks in advance,%0D%0A%0D%0AKind regards,'">
+    EnterDB Belux
+  </a>
+
+  <!-- EnterDB NL -->
+  <a style="flex:1; display:inline-block; width:100%; background-color:#1E90FF; color:white; text-align:center; padding:10px 0; text-decoration:none; border-radius:5px; font-weight:bold; cursor:pointer;"
+     onclick="window.location.href='mailto:chris.thorpe@enterprisedb.com ; gary.edwards@enterprisedb.com ; aret.aprahamian@enterprisedb.com?cc=license.ecs.nl@arrow.com ; Maha.ABBAZI@arrow.com&subject=PO&body=Hello Team,%0D%0A%0D%0APlease process the attached order.%0D%0A%0D%0APlease send confirmation of delivery to license.ecs.nl@arrow.com%0D%0A%0D%0AThanks in advance,%0D%0A%0D%0AKind regards,'">
+    EnterDB NL
+  </a>
+
+</div>
+
+<!-- F5 -->
+<a class="button" style="cursor:pointer;" 
+   onclick="window.location.href='mailto:E.Orders@F5.com ; emeadistiteam@f5.com ; emearenewals@f5.com ; m.darbyshire@f5.com ; n.vanballegooij@f5.com?cc=license.ecs.nl@arrow.com ; Maha.ABBAZI@arrow.com&subject=PO&body=Hello Team,%0D%0A%0D%0AAttached you will find our purchase order with reference number%0D%0A%0D%0ASend estimated delivery dates and confirmation of delivery to license.ecs.nl@arrow.com%0D%0A%0D%0AKind regards,'">
+  F5
+</a>
+
+<!-- Scality, curseur main, avec espace en bas -->
+<div style="margin-bottom:20px;">
+  <a style="display:inline-block; width:100%; background-color:#1E90FF; color:white; text-align:center; padding:10px 0; text-decoration:none; border-radius:5px; font-weight:bold; cursor:pointer;"
+     onclick="window.location.href='mailto:order@scality.com ; mike.elbinni@scality.com?cc=belux.licence.ecs.be@arrow.com ; Maha.ABBAZI@arrow.com&subject=PO&body=Hello Team,%0D%0A%0D%0AAttached you will find our purchase order with reference number%0D%0A%0D%0ASend estimated delivery dates and confirmation of delivery to belux.licence.ecs.be@arrow.com%0D%0A%0D%0AKind regards,'">
+    Scality
+  </a>
+</div>
+
+<!-- Splunk Belux / NL côte à côte, curseur main, emails CC et corps du mail -->
+<div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;">
+
+  <!-- Splunk Belux -->
+  <a style="flex:1; display:inline-block; width:100%; background-color:#1E90FF; color:white; text-align:center; padding:10px 0; text-decoration:none; border-radius:5px; font-weight:bold; cursor:pointer;"
+     onclick="window.location.href='mailto:fkhan@splunk.com ; mklepper@splunk.com ; kadamczukbenatigue@splunk.com ; lvdlugt@splunk.com ; mdeknegt@splunk.com?cc=belux.licence.ecs.be@arrow.com ; Maha.ABBAZI@arrow.com&subject=PO&body=Hello Team,%0D%0A%0D%0AAttached you will find our purchase order with reference number%0D%0A%0D%0ASend estimated delivery dates and confirmation of delivery to belux.licence.ecs.be@arrow.com%0D%0A%0D%0AKind regards,'">
+    Splunk Belux
+  </a>
+
+  <!-- Splunk NL -->
+  <a style="flex:1; display:inline-block; width:100%; background-color:#1E90FF; color:white; text-align:center; padding:10px 0; text-decoration:none; border-radius:5px; font-weight:bold; cursor:pointer;"
+     onclick="window.location.href='mailto:fkhan@splunk.com ; mklepper@splunk.com ; kadamczukbenatigue@splunk.com ; lvdlugt@splunk.com ; mdeknegt@splunk.com?cc=license.ecs.nl@arrow.com ; Maha.ABBAZI@arrow.com&subject=PO&body=Hello Team,%0D%0A%0D%0AAttached you will find our purchase order with reference number%0D%0A%0D%0ASend estimated delivery dates and confirmation of delivery to license.ecs.nl@arrow.com%0D%0A%0D%0AKind regards,'">
+    Splunk NL
+  </a>
+
+</div>
+
+<!-- Snyk Belux / NL côte à côte, curseur main, emails CC et corps du mail -->
+<div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;">
+
+  <!-- Snyk Belux -->
+  <a style="flex:1; display:inline-block; width:100%; background-color:#1E90FF; color:white; text-align:center; padding:10px 0; text-decoration:none; border-radius:5px; font-weight:bold; cursor:pointer;"
+     onclick="window.location.href='mailto:accounts-receivable@snyk.io ; aidan.ripochehayes@snyk.io?cc=belux.licence.ecs.be@arrow.com ; Maha.ABBAZI@arrow.com&subject=PO&body=Hello Team,%0D%0A%0D%0AAttached you will find our purchase order with reference number%0D%0A%0D%0ASend estimated delivery dates and confirmation of delivery to belux.licence.ecs.be@arrow.com%0D%0A%0D%0AKind regards,'">
+    Snyk Belux
+  </a>
+
+  <!-- Snyk NL -->
+  <a style="flex:1; display:inline-block; width:100%; background-color:#1E90FF; color:white; text-align:center; padding:10px 0; text-decoration:none; border-radius:5px; font-weight:bold; cursor:pointer;"
+     onclick="window.location.href='mailto:accounts-receivable@snyk.io ; aidan.ripochehayes@snyk.io?cc=license.ecs.nl@arrow.com ; Maha.ABBAZI@arrow.com&subject=PO&body=Hello Team,%0D%0A%0D%0AAttached you will find our purchase order with reference number%0D%0A%0D%0ASend estimated delivery dates and confirmation of delivery to license.ecs.nl@arrow.com%0D%0A%0D%0AKind regards,'">
+    Snyk NL
+  </a>
+
+</div>
+
+<!-- Chase Delivery Section -->
+<div class="section" id="chasedelivery">
+  <h2>Chase Delivery</h2>
+
+  <!-- Fortinet -->
+<a class="button" style="display:block; width:100%; margin-bottom:10px; background-color:#1E90FF; color:white; text-align:center; padding:10px 0; border-radius:5px; font-weight:bold; cursor:pointer;"
+   onclick="window.location.href='mailto:mkerasoviti@fortinet.com ; orders@fortinet.com ; cfields@fortinet.com?cc=reportfortinet.ecs.nl@arrow.com ; Maha.ABBAZI@arrow.com&subject=Follow up PO&body=Hello Team,%0D%0A%0D%0ACould you please give us an update on the status of this order ?%0D%0A%0D%0AThank you.%0D%0A%0D%0AKind regards,'">
+  Fortinet
+</a>
+
+ <!-- IBM ESA -->
+<a class="button" style="display:block; width:100%; margin-bottom:10px; background-color:#1E90FF; color:white; text-align:center; padding:10px 0; border-radius:5px; font-weight:bold; cursor:pointer;"
+   onclick="window.location.href='mailto:ask.esa.emea@sk.ibm.com?cc=Aya.TAMIM@arrow.com ; Maha.ABBAZI@arrow.com&subject=Follow up delivery / PO / Vendor ref&body=Hello Team,%0D%0A%0D%0AI\'m reaching out to follow up, as we have not received the POE for order%0D%0A%0D%0ACould you please check and share it with us ?%0D%0A%0D%0AKind regards,'">
+  IBM ESA
+</a>
+
+ <!-- IBM SPP -->
+<a class="button" style="display:block; width:100%; margin-bottom:10px; background-color:#1E90FF; color:white; text-align:center; padding:10px 0; border-radius:5px; font-weight:bold; cursor:pointer;"
+   onclick="window.location.href='mailto:SPPEMEA@ie.ibm.com?cc=Aya.TAMIM@arrow.com ; Maha.ABBAZI@arrow.com&subject=Follow up delivery / PO / Vendor ref&body=Hello Team,%0D%0A%0D%0AI\'m reaching out to follow up, as we have not received the POE for order%0D%0A%0D%0ACould you please check and share it with us ?%0D%0A%0D%0AKind regards,'">
+  IBM SPP
+</a>
+
+ <!-- IBM PA Belux / NL côte à côte avec emails destinataires spécifiques et corps ESA/SPP -->
+<div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
+
+  <!-- IBM PA Belux -->
+  <a class="button" style="flex:1; display:inline-block; width:100%; background-color:#1E90FF; color:white; text-align:center; padding:10px 0; border-radius:5px; font-weight:bold; cursor:pointer;"
+     onclick="window.location.href='mailto:dswom.benelux@ie.ibm.com ; Zuzana.Roedolf@ibm.com ; dina.boschmans@be.ibm.com ; darina.stelbasska@sk.ibm.com?cc=Aya.TAMIM@arrow.com ; Maha.ABBAZI@arrow.com&subject=IBM PA PO / Special bid number&body=Hello Team,%0D%0A%0D%0AI\'m reaching out to follow up, as we have not received the POE for order%0D%0A%0D%0ACould you please check and share it with us ?%0D%0A%0D%0AKind regards,'">
+    IBM PA Belux
+  </a>
+
+  <!-- IBM PA NL -->
+  <a class="button" style="flex:1; display:inline-block; width:100%; background-color:#1E90FF; color:white; text-align:center; padding:10px 0; border-radius:5px; font-weight:bold; cursor:pointer;"
+     onclick="window.location.href='mailto:dswom.benelux@ie.ibm.com ; Zuzana.Roedolf@ibm.com ; dina.boschmans@be.ibm.com ; darina.stelbasska@sk.ibm.com?cc=Aya.TAMIM@arrow.com ; Maha.ABBAZI@arrow.com&subject=IBM PA PO / Special bid number&body=Hello Team,%0D%0A%0D%0AI\'m reaching out to follow up, as we have not received the POE for order%0D%0A%0D%0ACould you please check and share it with us ?%0D%0A%0D%0AKind regards,'">
+    IBM PA NL
+  </a>
+
+</div>
+
+</div>
+
+<!-- Others -->
+<div class="section" id="others">
+  <h2>Others</h2>
+  <a class="button" style="cursor:pointer;"
+     onclick="sendMail('','Hello,%0A%0AI have a general inquiry:%0A')">
+    Other Emails
+  </a>
+</div>
+
+<script>
+showAll(); // show all sections by default
+</script>
+
+</div>
+
+</body>
+</html>
